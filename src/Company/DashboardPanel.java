@@ -1,4 +1,3 @@
-
 package Company;
 
 import javax.swing.*;
@@ -11,14 +10,12 @@ public class DashboardPanel extends JPanel {
         this.setLayout(new GridLayout(1, 3, 20, 0));
         this.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
-        // Tarjetas
+        // Tarjetas o paneles
         add(createCard("OUR BRANDS",
                 new String[]{"src\\sources\\marcas\\huawei-logo.jpg", "src\\sources\\marcas\\Apple_logo.jpg", "src\\sources\\marcas\\samsung-logo.jpg"},
-                "Consulta en tiempo real la disponibilidad de nuestros modelos. Mantenemos un stock actualizado para que siempre encuentres lo que necesitas, desde los últimos lanzamientos hasta opciones económicas y confiables."));
-
-        add(createCard("CATALOG",
-                null,
-                "Explora nuestra selección de móviles. Trabajamos con las marcas más reconocidas del mercado para ofrecer variedad, calidad y tecnología de punta para cada tipo de cliente."));
+                "Consulta en tiempo real la disponibilidad de nuestros modelos. Mantenemos un stock actualizado para que siempre encuentres lo que necesitas, desde los últimos lanzamientos hasta opciones económicas y confiables."
+                + "\nExplora nuestra selección de móviles. Trabajamos con las marcas más reconocidas del mercado para ofrecer variedad, calidad y tecnología de punta para cada tipo de cliente."
+        ));
 
         add(createCard("ABOUT US",
                 null,
