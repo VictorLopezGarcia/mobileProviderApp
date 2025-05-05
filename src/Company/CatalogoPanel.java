@@ -77,6 +77,8 @@ public class CatalogoPanel extends JPanel {
         cargarMoviles(Catalogo.ListaMovilesModelo());
     }
 
+    /**
+     */
     private void cargarMoviles(ArrayList<Movil> lista) {
         if(lista.isEmpty()){
             JOptionPane.showMessageDialog(this, "Error actualizando catalogo.");
@@ -87,7 +89,8 @@ public class CatalogoPanel extends JPanel {
             modeloLista.addElement(m);
         }
     }
-
+    /**
+     */
     private void buscarPorMarca() {
         String marca = campoBusqueda.getText().trim();
         if (marca.isEmpty()) {
@@ -96,7 +99,8 @@ public class CatalogoPanel extends JPanel {
         }
         cargarMoviles(Catalogo.buscarPorMarca(marca));
     }
-
+    /**
+     */
     private void comprarSeleccionado() {
         Movil seleccionado = listaMoviles.getSelectedValue();
         if (seleccionado != null) {
@@ -108,7 +112,8 @@ public class CatalogoPanel extends JPanel {
             JOptionPane.showMessageDialog(this, "Selecciona un móvil primero.");
         }
     }
-
+    /**
+     */
     private void agregarNuevoMovil() {
         JTextField campoMarca = new JTextField();
         JTextField campoModelo = new JTextField();
@@ -149,9 +154,13 @@ public class CatalogoPanel extends JPanel {
             }
         }
     }
-
+    /**
+     * Crea una instancia del objeto Movil que contiene un JList<Movil>
+     * Comprueba
+     */
     private void mostrarCaracteristicas() {
         Movil seleccionado = listaMoviles.getSelectedValue();
+        
         if (seleccionado != null) {
             StringBuilder CadenaCaracteristicas = new StringBuilder();
             for (String c : seleccionado.getCaracteristicas()) {
@@ -194,5 +203,6 @@ public class CatalogoPanel extends JPanel {
             labelImagen.setIcon(null);
         }
     }
-
+    
+    
 }

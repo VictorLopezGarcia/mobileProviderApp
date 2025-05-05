@@ -1,8 +1,9 @@
 
 package Company;
-
 import java.util.ArrayList;
 
+/** Clase padre del proyecto
+ * */
 public class Movil implements Comparable<Movil> {
     private String marca;
     private String modelo;
@@ -10,6 +11,9 @@ public class Movil implements Comparable<Movil> {
     private double precio;
     private int stock;
 
+    /**
+     * 
+     */
     public Movil(String marca, String modelo, ArrayList<String> caracteristicas, double precio, int stock) {
         this.marca = marca;
         this.modelo = modelo;
@@ -34,6 +38,7 @@ public class Movil implements Comparable<Movil> {
     public int getStock() { return stock; }
     public void setStock(int stock) { this.stock = stock; }
 
+    
     @Override
     public boolean equals(Object obj) {
         if(obj.getClass()!= Movil.class) return false;
@@ -45,7 +50,6 @@ public class Movil implements Comparable<Movil> {
         return super.hashCode();
     }
 
-    
     
     @Override
     public int compareTo(Movil o) {

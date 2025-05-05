@@ -7,11 +7,14 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.*;
 import java.util.stream.Collectors;
-
+/** 
+ * Clase fachada
+ */
 public class Catalogo {
     
     private static final int numCaracteristicas = 4;
 
+    
     private static TreeSet<Movil> stock = new TreeSet<>();
 
     public static void instanciarBd() {
@@ -39,11 +42,19 @@ public class Catalogo {
         }
     }
 
+    /** 
+    *
+    * 
+    */
     public static void agregarMovil(Movil m) {
         stock.add(m);
         guardarEnCsv(m); // Escribe de nuevo en el archivo al agregar
     }
-
+    
+    /** 
+    *
+    * 
+    */
     private static void guardarEnCsv(Movil m) {
         ArrayList<String> lineas = new ArrayList<>();
         String caracs = String.join(";", m.getCaracteristicas());   
@@ -57,7 +68,11 @@ public class Catalogo {
             System.err.println("Error escribiendo moviles.csv: " + e.getMessage());
         }
     }
-
+    
+    /** 
+    *
+    * 
+    */
     public static boolean comprarTelefono(Movil m) {
         if(stock.contains(m) && m.getStock() > 0) {
             m.setStock(m.getStock() - 1);
@@ -74,6 +89,10 @@ public class Catalogo {
     }
      */
     
+    /** 
+    *
+    * 
+    */
     public static ArrayList<Movil> ListaMovilesModelo() {
       
         return new ArrayList<>(stock);
